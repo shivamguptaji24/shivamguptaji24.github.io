@@ -485,6 +485,17 @@ main {
   color: var(--light-gray);
 }
 
+.social-item .social-link .leetcode-icon {
+  height: 24px;
+  width: 24px;
+  filter: grayscale(1) brightness(0.7); /* Matches 'light-gray-70' look */
+  transition: filter 0.3s ease;
+}
+
+.social-item .social-link:hover .leetcode-icon {
+  filter: grayscale(1) brightness(1); /* Matches 'light-gray' on hover */
+}
+
 
 
 
