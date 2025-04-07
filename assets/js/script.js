@@ -174,3 +174,36 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+
+// Global variable to track if it's already speaking
+let isSpeaking = false;
+
+function speakText(element) {
+  if (isSpeaking) return; // Prevent multiple triggers
+
+  const textElement = element.querySelector('.glitch-text');
+  const textToSpeak = textElement.getAttribute('data-text');
+
+  const utterance = new SpeechSynthesisUtterance(textToSpeak);
+  utterance.pitch = 0;
+  utterance.rate = 2;
+  utterance.volume = 1;
+
+  const voices = window.speechSynthesis.getVoices();
+  if (voices.length > 0) {
+    utterance.voice = voices.find(voice => voice.lang.startsWith('en')) || voices[0];
+  }
+
+  // Set the flag to true when speaking starts
+  isSpeaking = true;
+
+  // Reset the flag after it ends
+  utterance.onend = () => {
+    isSpeaking = false;
+  };
+
+  // Cancel any previous speech and speak the new one
+  window.speechSynthesis.cancel(); 
+  window.speechSynthesis.speak(utterance);
+}
