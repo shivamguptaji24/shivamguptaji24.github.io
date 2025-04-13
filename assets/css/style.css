@@ -483,6 +483,28 @@ main {
   border-radius: 20px;
 }
 
+.animated-avatar {
+  margin: auto;
+  animation: float 3s ease-in-out infinite;
+}
+
+.animated-avatar img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
 .info-content .name {
   color: var(--white-2);
   font-size: var(--fs-3);
