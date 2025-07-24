@@ -26,10 +26,18 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-
 </head>
 
 <body>
+
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="loader-content">
+      <div class="loader-animation"></div>
+      <p class="glitch-text" data-text="Welcome to My Portfolio">Welcome to My Portfolio</p>
+    </div>
+  </div>
+
 
   <!--
     - #MAIN
@@ -48,7 +56,7 @@
         <figure class="avatar-box">
           <div class="animated-avatar">
             <img src="./assets/images/my-avatar.png" alt="Shivam Gupta" width="80">
-          </div>  
+          </div>
         </figure>
 
         <div class="info-content">
@@ -60,7 +68,7 @@
         <button class="info_more-btn" data-sidebar-btn>
           <span>Show Contacts</span>
 
-          <ion-icon name="chevron-down"></ion-icon>
+          <ion-icon name="close"></ion-icon>
         </button>
 
       </div>
@@ -72,25 +80,26 @@
         <ul class="social-list">
 
           <li class="social-item">
-            <a href="https://github.com/shivamguptaji24" class="social-link">
+            <a href="https://github.com/shivamguptaji24" class="social-link" target="_blank">
               <ion-icon name="logo-github"></ion-icon>
             </a>
           </li>
 
           <li class="social-item">
             <a href="https://leetcode.com/u/ShivamGupta24/" class="social-link" target="_blank">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="LeetCode" class="leetcode-icon">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="LeetCode"
+                class="leetcode-icon">
             </a>
-          </li>                   
+          </li>
 
           <li class="social-item">
-            <a href="https://www.linkedin.com/in/shivam-gupta-cse/" class="social-link">
+            <a href="https://www.linkedin.com/in/shivam-gupta-cse/" class="social-link" target="_blank">
               <ion-icon name="logo-linkedin"></ion-icon>
             </a>
           </li>
 
           <li class="social-item">
-            <a href="./assets/pdfs/Shivam Gupta-Resume.pdf" class="social-link">
+            <a href="./assets/pdfs/CV Shivam Gupta.pdf" class="social-link" target="_blank">
               <ion-icon name="document-text-outline"></ion-icon>
             </a>
           </li>
@@ -152,7 +161,7 @@
             <div class="contact-info">
               <p class="contact-title">Location</p>
 
-              <address>Delhi, India</address>
+              <address>New Delhi, India - 110041</address>
             </div>
 
           </li>
@@ -182,7 +191,11 @@
         <ul class="navbar-list">
 
           <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
+            <button class="navbar-link  active" data-nav-link>Home</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>About</button>
           </li>
 
           <li class="navbar-item">
@@ -211,426 +224,184 @@
 
 
 
+      <article class="home active" data-page="home">
+
+        <!-- VIDEO BACKGROUND -->
+        <div class="video-background">
+          <video autoplay muted loop playsinline>
+            <source src="./assets/Animation.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <!-- FOREGROUND CONTENT -->
+        <div class="home-intro">
+          <h1 class="home-title">Shivam Gupta</h1>
+          <h2 class="cd-headline rotate-1">I'm a passionate
+            <span class="cd-words-wrapper">
+              <b class="is-visible">Java Developer.</b>
+              <b>Android Developer.</b>
+              <b>Back-end Developer.</b>
+              <b>Full-Stack Developer.</b>
+            </span>
+          </h2>
+        </div>
+      </article>
+
+
+
 
 
       <!--
-        - #ABOUT
-      -->
-
-      <article class="about  active" data-page="about">
-
+              - #ABOUT
+            -->
+      
+      <article class="about" data-page="about">
+      
         <header>
           <h2 class="h2 article-title">About me</h2>
         </header>
-
-        <section class="about-text">
-          <p>
-            I am a passionate software engineer with a strong foundation in Java development, full-stack engineering,
-            and AI-driven solutions. With expertise spanning backend architecture, database optimization, and scalable
-            system design, I thrive on transforming complex problems into efficient, real-world applications.
-          </p>
-
-          <p>
-            My journey in software engineering has been driven by an insatiable curiosity for cutting-edge technologies,
-            from machine learning models for intelligent automation to cloud-native architectures for high-performance
-            applications. I specialize in designing robust, scalable, and secure applications, leveraging Spring Boot,
-            Firebase, and MySQL to build dynamic, high-availability systems.
-          </p>
-
-          <p>
-            Beyond coding, I am an advocate for software craftsmanship and agile methodologies, ensuring that my
-            solutions are not only functional but also optimized for performance, maintainability, and scalability. I am
-            currently exploring the intersection of AI and healthcare to build next-generation smart hospital management
-            systems, integrating AI-based diagnostics, real-time patient monitoring, and predictive analytics.
-          </p>
-
-          <p>
-            I believe that technology should empower and innovate, and I am constantly pushing the boundaries to develop
-            solutions that are intelligent, efficient, and future-proof.
-          </p>
-        </section>
-
-        <div class="crazy-divider">
-          <div class="glow-line left"></div>
-        
-          <div class="glow-icon" onmouseover="speakText(this)">
-            <ion-icon name="pulse-outline"></ion-icon>
-            <span class="glitch-text" data-text="progress">Progress</span>
+      
+        <!-- Split Layout About Section -->
+        <section class="about-split">
+          <div class="about-text-box">
+            <p>I am a passionate software engineer with a strong foundation in Java development, full-stack engineering, and
+              AI-driven solutions...</p>
+            <p>My journey in software engineering has been driven by an insatiable curiosity for cutting-edge technologies...
+            </p>
+            <p>Beyond coding, I am an advocate for software craftsmanship and agile methodologies...</p>
+            <p>I believe that technology should empower and innovate...</p>
           </div>
-        
-          <div class="glow-line right"></div>
-        </div>
-
-        <!-- LeetCode Interactive Card -->
-        <h3 class="h3">LeetCode Progress</h3>
-        <div class="progress-card">
-          <a href="https://leetcode.com/ShivamGupta24/" target="_blank" class="interactive-card">
-            <div class="card-content">
-              <img src="https://leetcard.jacoblin.cool/ShivamGupta24?theme=dark&ext=heatmap" alt="LeetCode Stats">
-              <p>Click to explore full LeetCode profile</p>
-            </div>
-          </a>
-        </div>              
-
-        <h3 class="h3">GitHub Contributions</h3>
-        <div class="progress-card">
-          
-          <!-- GitHub Stats -->
-          <a href="https://github.com/shivamguptaji24" target="_blank" class="card-link">
-            <img src="https://github-readme-stats.vercel.app/api?username=shivamguptaji24&show_icons=true&theme=dark" alt="GitHub Stats" class="card-image">
-          </a>
-        
-          <!-- GitHub Streak -->
-          <a href="https://github.com/shivamguptaji24" target="_blank" class="card-link">
-            <img src="https://github-readme-streak-stats.herokuapp.com/?user=shivamguptaji24&theme=github-dark&hide_border=true" alt="GitHub Streak" class="card-image">
-          </a>
-        
-          <!-- Top Languages -->
-          <a href="https://github.com/shivamguptaji24" target="_blank" class="card-link">
-            <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=shivamguptaji24&layout=compact&theme=github_dark&hide_border=true" alt="Top Languages" class="card-image">
-          </a>
-        
-        </div>
-
+      
+          <div class="about-photo-box">
+            <img src="./assets/images/profile-pic.png" alt="Shivam Gupta" class="about-photo">
+            <div class="about-label glitch-text" data-text="Code. Build. Repeat.">Code. Build. Repeat.</div>
+          </div>
+        </section>
+      
         <div class="crazy-divider">
           <div class="glow-line left"></div>
-        
+      
           <div class="glow-icon" onmouseover="speakText(this)">
             <ion-icon name="bulb-outline"></ion-icon>
             <span class="glitch-text" data-text="mindset">Mindset</span>
           </div>
-        
+      
           <div class="glow-line right"></div>
         </div>
-                
-
+      
+      
         <!--
-          - service
-        -->
-
-        <section class="service">
-
-          <h3 class="h3 service-title">What i'm doing</h3>
-
-          <ul class="service-list">
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-code.svg
-                " alt="design icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Java Development</h4>
-
-                <p class="service-item-text">
-                  Creating efficient, scalable, and secure applications with Java.
-              </div>
-
+                        - service
+                      -->
+        
+        <!-- 💼 SERVICES -->
+        <section class="service service-upgraded">
+          <h3 class="h3 service-title">What I'm Doing</h3>
+          <ul class="hex-service-grid">
+            <li class="hex-card">
+              <div class="hex-icon"><img src="./assets/images/icon-code.svg" alt="Java"></div>
+              <p class="hex-label">Java Development</p>
             </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Full-Stack development</h4>
-
-                <p class="service-item-text">
-                  Building dynamic web applications with backend and frontend technologies.
-              </div>
-
+            <li class="hex-card">
+              <div class="hex-icon"><img src="./assets/images/icon-app.svg" alt="Android"></div>
+              <p class="hex-label">Android Apps</p>
             </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-app.svg" alt="mobile app icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Android App Development</h4>
-
-                <p class="service-item-text">
-                  Developing user-friendly mobile applications with modern UI/UX.
-              </div>
-
+            <li class="hex-card">
+              <div class="hex-icon"><img src="./assets/images/icon-web.svg" alt="Web"></div>
+              <p class="hex-label">Web Development</p>
             </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-ai.svg" alt="camera icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">AI & Smart solutions</h4>
-
-                <p class="service-item-text">
-                  Exploring AI-powered solutions for automation and efficiency. </p>
-              </div>
-
+            <li class="hex-card">
+              <div class="hex-icon"><img src="./assets/images/icon-cloud.svg" alt="Cloud"></div>
+              <p class="hex-label">Cloud Solutions</p>
             </li>
-
+            <li class="hex-card">
+              <div class="hex-icon"><img src="./assets/images/icon-data.svg" alt="Data"></div>
+              <p class="hex-label">Data Management</p>
+            </li>
+            <li class="hex-card">
+              <div class="hex-icon"><img src="./assets/images/icon-design.svg" alt="UI/UX"></div>
+              <p class="hex-label">UI/UX Design</p>
+            </li>
+            <li class="hex-card">
+              <div class="hex-icon"><img src="./assets/images/icon-api.svg" alt="API"></div>
+              <p class="hex-label">API Development</p>
+            </li>
+            <li class="hex-card">
+              <div class="hex-icon"><img src="./assets/images/icon-dev.svg" alt="Full Stack"></div>
+              <p class="hex-label">Full-Stack Dev</p>
+            </li>
+            <li class="hex-card">
+              <div class="hex-icon"><img src="./assets/images/icon-ai.svg" alt="AI"></div>
+              <p class="hex-label">AI & Smart</p>
+            </li>
           </ul>
-
         </section>
-
-
+        
+        
         <!-- My Development Workflow -->
-
+        
         <section class="development-workflow">
-
+        
           <h3 class="h3 workflow-title">My Development Workflow</h3>
-
-          <ul class="workflow-list has-scrollbar">
-
-            <li class="workflow-item">
-              <div class="content-card">
-
-                <figure class="workflow-icon-box">
-                  <img src="./assets/images/plan-icon.svg" alt="Planning" width="60">
-                </figure>
-
-                <h4 class="h4 workflow-item-title">1. Planning & Research</h4>
-
-                <div class="workflow-text">
-                  <p>
-                    Understanding project goals, gathering requirements, and brainstorming ideas. Creating wireframes
-                    and mockups using tools like Figma.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="workflow-item">
-              <div class="content-card">
-
-                <figure class="workflow-icon-box">
-                  <img src="./assets/images/techstack-icon.svg" alt="Choosing Tech Stack" width="60">
-                </figure>
-
-                <h4 class="h4 workflow-item-title">2. Choosing the Tech Stack</h4>
-
-                <div class="workflow-text">
-                  <p>
-                    Selecting the best technologies like Java (Spring Boot), Firebase, MySQL, and front-end frameworks
-                    like React or XML for Android.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="workflow-item">
-              <div class="content-card">
-
-                <figure class="workflow-icon-box">
-                  <img src="./assets/images/setup-icon.svg" alt="Setting Up Environment" width="60">
-                </figure>
-
-                <h4 class="h4 workflow-item-title">3. Setting Up the Development Environment</h4>
-
-                <div class="workflow-text">
-                  <p>
-                    Configuring IDEs like IntelliJ IDEA, Android Studio, or VS Code. Setting up GitHub repositories,
-                    databases, and project structures.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="workflow-item">
-              <div class="content-card">
-
-                <figure class="workflow-icon-box">
-                  <img src="./assets/images/backend-icon.svg" alt="Backend Development" width="60">
-                </figure>
-
-                <h4 class="h4 workflow-item-title">4. Backend Development</h4>
-
-                <div class="workflow-text">
-                  <p>
-                    Developing RESTful APIs with Java (Spring Boot), integrating databases (MySQL/Firebase), and
-                    implementing authentication and security.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="workflow-item">
-              <div class="content-card">
-
-                <figure class="workflow-icon-box">
-                  <img src="./assets/images/frontend-icon.svg" alt="Frontend Development" width="60">
-                </figure>
-
-                <h4 class="h4 workflow-item-title">5. Frontend Development</h4>
-
-                <div class="workflow-text">
-                  <p>
-                    Building intuitive UIs with React, XML (Android), or HTML/CSS, ensuring responsiveness, animations,
-                    and smooth user experience.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="workflow-item">
-              <div class="content-card">
-
-                <figure class="workflow-icon-box">
-                  <img src="./assets/images/integration-icon.svg" alt="Integration & API Testing" width="60">
-                </figure>
-
-                <h4 class="h4 workflow-item-title">6. Integration & API Testing</h4>
-
-                <div class="workflow-text">
-                  <p>
-                    Connecting the frontend with the backend, testing API endpoints using Postman, and debugging API
-                    calls for smooth data exchange.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="workflow-item">
-              <div class="content-card">
-
-                <figure class="workflow-icon-box">
-                  <img src="./assets/images/testing-icon.svg" alt="Testing & Debugging" width="60">
-                </figure>
-
-                <h4 class="h4 workflow-item-title">7. Testing & Debugging</h4>
-
-                <div class="workflow-text">
-                  <p>
-                    Running unit tests with JUnit, UI testing with Espresso (Android), and debugging to fix bugs and
-                    performance issues.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="workflow-item">
-              <div class="content-card">
-
-                <figure class="workflow-icon-box">
-                  <img src="./assets/images/deployment-icon.svg" alt="Deployment" width="60">
-                </figure>
-
-                <h4 class="h4 workflow-item-title">8. Deployment & Hosting</h4>
-
-                <div class="workflow-text">
-                  <p>
-                    Deploying the application using GitHub Pages, Firebase Hosting, or Docker for backend services,
-                    ensuring smooth live deployment.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="workflow-item">
-              <div class="content-card">
-
-                <figure class="workflow-icon-box">
-                  <img src="./assets/images/monitoring-icon.svg" alt="Monitoring & Maintenance" width="60">
-                </figure>
-
-                <h4 class="h4 workflow-item-title">9. Monitoring & Maintenance</h4>
-
-                <div class="workflow-text">
-                  <p>
-                    Monitoring app performance, handling updates, fixing security vulnerabilities, and adding new
-                    features based on user feedback.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-          </ul>
-
+          <div class="workflow-svg-timeline">
+            <div class="workflow-step">1. Planning</div>
+            <div class="workflow-arrow">➡️</div>
+            <div class="workflow-step">2. Tech Stack</div>
+            <div class="workflow-arrow">➡️</div>
+            <div class="workflow-step">3. Environment</div>
+            <div class="workflow-arrow">➡️</div>
+            <div class="workflow-step">4. Backend</div>
+            <div class="workflow-arrow">➡️</div>
+            <div class="workflow-step">5. Frontend</div>
+            <div class="workflow-arrow">➡️</div>
+            <div class="workflow-step">6. Testing</div>
+            <div class="workflow-arrow">➡️</div>
+            <div class="workflow-step">7. Deploy</div>
+          </div>
+        
+        
         </section>
-
-
-
-
+        
+        
+        
+        
         <!--
-        - My Coding Journey
-        -->
-
+                - My Coding Journey
+                -->
+        
         <section class="coding-journey">
-
+        
           <h3 class="h3 journey-title">My Coding Journey</h3>
 
-          <ul class="journey-list has-scrollbar">
-
-            <li class="journey-item">
-              <div class="content-card">
-                <i class="fas fa-rocket journey-icon"></i>
-                <h4 class="h4 journey-item-title">Starting Phase</h4>
-                <p>Started learning Java and Data Structures in college, exploring core programming concepts.</p>
-              </div>
-            </li>
-
-            <li class="journey-item">
-              <div class="content-card">
-                <i class="fas fa-book journey-icon"></i>
-                <h4 class="h4 journey-item-title">Learning & Growth</h4>
-                <p>Dived into problem-solving on LeetCode, HackerRank, and participated in coding challenges.</p>
-              </div>
-            </li>
-
-            <li class="journey-item">
-              <div class="content-card">
-                <i class="fas fa-code journey-icon"></i>
-                <h4 class="h4 journey-item-title">First Projects</h4>
-                <p>Built small projects like a Student Management System, Calculator App, and Inventory Manager in Java.
-                </p>
-              </div>
-            </li>
-
-            <li class="journey-item">
-              <div class="content-card">
-                <i class="fas fa-laptop-code journey-icon"></i>
-                <h4 class="h4 journey-item-title">Internships & Experience</h4>
-                <p>Interned as a Java Developer at Neevas & Versai Tech Solutions, working on real-world applications.
-                </p>
-              </div>
-            </li>
-
-            <li class="journey-item">
-              <div class="content-card">
-                <i class="fas fa-award journey-icon"></i>
-                <h4 class="h4 journey-item-title">Achievements</h4>
-                <p>Won Hackathon 2023 for building an Inventory Management System. Completed Google Cloud Certification.
-                </p>
-              </div>
-            </li>
-
-            <li class="journey-item">
-              <div class="content-card">
-                <i class="fas fa-bullseye journey-icon"></i>
-                <h4 class="h4 journey-item-title">Future Goals</h4>
-                <p>Aspiring to master Full Stack Development, AI/ML, and contribute to open-source projects.</p>
-              </div>
-            </li>
-
-          </ul>
-
+          <div class="timeline-wrapper">
+            <div class="timeline-point">
+              <span class="dot"></span>
+              <div class="label">💻 Started learning C++ in college</div>
+            </div>
+            <div class="timeline-point">
+              <span class="dot"></span>
+              <div class="label">🚀 Shifted to Java in 2nd Year of my college</div>
+            </div>
+            <div class="timeline-point">
+              <span class="dot"></span>
+              <div class="label">🛠️ Built A Standalone Application - Supermarket Billing POS System</div>
+            </div>
+            <div class="timeline-point">
+              <span class="dot"></span>
+              <div class="label">👨‍💻 Interned as Java Developer at Neevas</div>
+            </div>
+            <div class="timeline-point">
+              <span class="dot"></span>
+              <div class="label">🛠️ Built An Android Application - "I-Hospital" using Java</div>
+            </div>
+            <div class="timeline-point">
+              <span class="dot"></span>
+              <div class="label">🎯 Future: Full Stack + AI + Cloud</div>
+            </div>
+          </div>
         </section>
-      </article>
+        </article>
 
 
 
@@ -669,7 +440,7 @@
               <p class="timeline-text">
                 Bachelor of Technology - Computer Science Engineering (B.Tech - CSE)
                 <br>
-                Expected to graduate in 2025 with hands-on experience in Java, Android Development, and Data Structures
+                Successful graduate with hands-on experience in Java, Android Development, and Data Structures
               </p>
 
             </li>
@@ -681,7 +452,7 @@
               <span>2019 — 2020</span>
 
               <p class="timeline-text">
-                Senior Secondary
+                Senior Secondary - <b>74.2%</b>
                 <br>
                 Completed 12th in 2020 with a Science focus (PCM)
               </p>
@@ -695,7 +466,9 @@
               <span>2017 — 2018</span>
 
               <p class="timeline-text">
-                High School
+                High School - <b>86.7%</b>
+                <br>
+                <b>Rank 1st in Class</b>
                 <br>
                 Graduated in 2018 with Honors
               </p>
@@ -710,12 +483,12 @@
 
           <div class="crazy-divider">
             <div class="glow-line left"></div>
-          
+
             <div class="glow-icon" onmouseover="speakText(this)">
               <ion-icon name="briefcase-outline"></ion-icon>
               <span class="glitch-text" data-text="experience">Experience</span>
             </div>
-          
+
             <div class="glow-line right"></div>
           </div>
 
@@ -733,7 +506,8 @@
 
               <div class="timeline-header">
                 <h4 class="h4 timeline-item-title">Java Development Intern</h4>
-                <a href="/assets/pdfs/Shivam Gupta - Neevas Certificate.pdf" target="_blank" class="certificate-link">View Certificate</a>
+                <a href="/assets/pdfs/Shivam Gupta - Neevas Certificate.pdf" target="_blank"
+                  class="certificate-link">View Certificate</a>
               </div>
 
 
@@ -764,18 +538,18 @@
 
         <div class="crazy-divider">
           <div class="glow-line left"></div>
-        
+
           <div class="glow-icon" onmouseover="speakText(this)">
             <ion-icon name="construct-outline"></ion-icon>
             <span class="glitch-text" data-text="my skills">My Skills</span>
           </div>
-        
+
           <div class="glow-line right"></div>
         </div>
 
         <section class="skills-section">
           <h2 class="skills-title">My Skills</h2>
-        
+
           <!-- Filter Buttons -->
           <ul class="filter-list">
             <li class="filter-item">
@@ -794,10 +568,10 @@
               <button data-skill-filter="mobile & ui/ux development">UI/UX & Design</button>
             </li>
           </ul>
-        
+
           <!-- Skills List -->
           <div class="skills-list">
-        
+
             <!-- Programming Languages Skills -->
             <div class="skills-item" data-category="programming languages" data-skill="Java">
               <span>Java</span>
@@ -814,7 +588,7 @@
             <div class="skills-item" data-category="programming languages" data-skill="XML">
               <span>XML</span>
             </div>
-        
+
             <!-- Data Structures & Databases Skills -->
             <div class="skills-item" data-category="data structures & database" data-skill="DSA">
               <span>Data Structures & Algorithms</span>
@@ -828,7 +602,7 @@
             <div class="skills-item" data-category="data structures & database" data-skill="SQL Server MS">
               <span>SQL Server MS</span>
             </div>
-        
+
             <!-- Tools & Version Control Skills -->
             <div class="skills-item" data-category="tools & version control" data-skill="Git">
               <span>Git</span>
@@ -845,7 +619,7 @@
             <div class="skills-item" data-category="tools & version control" data-skill="Visual Studio">
               <span>Visual Studio</span>
             </div>
-        
+
             <!-- Mobile & UI/UX Development Skills -->
             <div class="skills-item" data-category="mobile & ui/ux development" data-skill="Android Studio">
               <span>Android Studio</span>
@@ -859,7 +633,7 @@
 
           </div>
         </section>
-        
+
 
 
       </article>
@@ -918,16 +692,16 @@
                 <button data-select-item>All</button>
               </li>
 
-              <li class="filter-item">
-                <button data-filter-btn>Android Applications</button>
+              <li class="select-item">
+                <button data-select-item>Android Applications</button>
               </li>
 
-              <li class="filter-item">
-                <button data-filter-btn>Desktop Applications</button>
+              <li class="select-item">
+                <button data-select-item>Desktop Applications</button>
               </li>
 
-              <li class="filter-item">
-                <button data-filter-btn>Figma</button>
+              <li class="select-item">
+                <button data-select-item>Figma</button>
               </li>
 
             </ul>
@@ -937,7 +711,7 @@
           <ul class="project-list">
 
             <li class="project-item  active" data-filter-item data-category="android applications">
-              <a href="#">
+              <a href="#" target="_blank">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -955,7 +729,7 @@
             </li>
 
             <li class="project-item  active" data-filter-item data-category="desktop applications">
-              <a href="#">
+              <a href="#" target="_blank">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -973,7 +747,7 @@
             </li>
 
             <li class="project-item  active" data-filter-item data-category="figma">
-              <a href="/assets/images/projects/NIKE AIR MAX 90.jpg">
+              <a href="/assets/images/projects/NIKE AIR MAX 90.jpg" target="_blank">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -991,7 +765,7 @@
             </li>
 
             <li class="project-item  active" data-filter-item data-category="figma">
-              <a href="/assets/images/projects/PRO Gaming Console.png">
+              <a href="/assets/images/projects/PRO Gaming Console.png" target="_blank">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -1036,7 +810,7 @@
               <span class="certificate-category">Forage</span>
               <time class="certificate-date">March 05, 2025</time>
               <h3 class="certificate-title">Walmart USA Advanced Software Engineering Virtual Experience Program</h3>
-              <a href="/assets/pdfs/Shivam Gupta - Walmart.pdf" class="certificate-btn">View Certificate</a>
+              <a href="/assets/pdfs/Shivam Gupta - Walmart.pdf" class="certificate-btn" target="_blank">View Certificate</a>
             </div>
           </div>
 
@@ -1049,7 +823,7 @@
               <span class="certificate-category">Unstop</span>
               <time class="certificate-date">2024</time>
               <h3 class="certificate-title">TATA Crucible Campus Quiz 2024</h3>
-              <a href="/assets/pdfs/Shivam Gupta - TATA Crucible.pdf" class="certificate-btn">View Certificate</a>
+              <a href="/assets/pdfs/Shivam Gupta - TATA Crucible.pdf" class="certificate-btn" target="_blank">View Certificate</a>
             </div>
           </div>
 
@@ -1063,7 +837,7 @@
               <span class="certificate-category">Forage</span>
               <time class="certificate-date">September 11, 2024</time>
               <h3 class="certificate-title">JP Morgan Chase & Co. - Software Engineering Lite Job Simulation</h3>
-              <a href="/assets/pdfs/Shivam Gupta - J.P. Morgan Chase & Co..pdf" class="certificate-btn">View
+              <a href="/assets/pdfs/Shivam Gupta - J.P. Morgan Chase & Co..pdf" class="certificate-btn" target="_blank">View
                 Certificate</a>
             </div>
           </div>
@@ -1077,10 +851,10 @@
               <span class="certificate-category">Forage</span>
               <time class="certificate-date">September 07, 2024</time>
               <h3 class="certificate-title">TATA - Data Visualization: Empowering Business with Effective Insights</h3>
-              <a href="/assets/pdfs/Shivam Gupta - TATA.pdf" class="certificate-btn">View Certificate</a>
+              <a href="/assets/pdfs/Shivam Gupta - TATA.pdf" class="certificate-btn" target="_blank">View Certificate</a>
             </div>
           </div>
-          
+
           <div class="certificate-card">
             <figure class="certificate-image">
               <img src="./assets/images/certificates-logo/Infosys Springboard.jpeg" alt="Infosys" loading="lazy">
@@ -1090,7 +864,7 @@
               <span class="certificate-category">Infosys Springboard</span>
               <time class="certificate-date">August 15, 2024</time>
               <h3 class="certificate-title">Introduction to Data Science</h3>
-              <a href="/assets/pdfs/Shivam Gupta - Infosys.pdf" class="certificate-btn">View Certificate</a>
+              <a href="/assets/pdfs/Shivam Gupta - Infosys.pdf" class="certificate-btn" target="_blank">View Certificate</a>
             </div>
           </div>
 
@@ -1103,7 +877,7 @@
               <span class="certificate-category">IIDE The Digital School</span>
               <time class="certificate-date">August 02, 2024</time>
               <h3 class="certificate-title">Masterclass - ChatGPT</h3>
-              <a href="/assets/pdfs/Shivam Gupta - IIDE - ChatGPT.pdf" class="certificate-btn">View Certificate</a>
+              <a href="/assets/pdfs/Shivam Gupta - IIDE - ChatGPT.pdf" class="certificate-btn" target="_blank">View Certificate</a>
             </div>
           </div>
 
@@ -1116,7 +890,7 @@
               <span class="certificate-category">IIDE The Digital School</span>
               <time class="certificate-date">July 28, 2024</time>
               <h3 class="certificate-title">Masterclass - Digital Marketing Fundamentals</h3>
-              <a href="/assets/pdfs/Shivam Gupta - IIDE - DMF.pdf" class="certificate-btn">View Certificate</a>
+              <a href="/assets/pdfs/Shivam Gupta - IIDE - DMF.pdf" class="certificate-btn" target="_blank">View Certificate</a>
             </div>
           </div>
 
@@ -1129,7 +903,7 @@
               <span class="certificate-category">Geekster</span>
               <time class="certificate-date">January 13, 2024</time>
               <h3 class="certificate-title">Masterclass - Getting Started with Java</h3>
-              <a href="/assets/pdfs/Shivam Gupta - Geekster.pdf" class="certificate-btn">View Certificate</a>
+              <a href="/assets/pdfs/Shivam Gupta - Geekster.pdf" class="certificate-btn" target="_blank">View Certificate</a>
             </div>
           </div>
 
@@ -1142,7 +916,8 @@
               <span class="certificate-category">Devtown</span>
               <time class="certificate-date">2022</time>
               <h3 class="certificate-title">Bootcamp - Python and Data Visualization</h3>
-              <a href="/assets/pdfs/Shivam Gupta - Devtown - Python and Data Visualization.pdf" class="certificate-btn">View Certificate</a>
+              <a href="/assets/pdfs/Shivam Gupta - Devtown - Python and Data Visualization.pdf"
+                class="certificate-btn" target="_blank">View Certificate</a>
             </div>
           </div>
 
@@ -1155,7 +930,8 @@
               <span class="certificate-category">Google Developer Group</span>
               <time class="certificate-date">2022</time>
               <h3 class="certificate-title">Bootcamp - Python and Data Visualization</h3>
-              <a href="/assets/pdfs/Shivam Gupta - Google - Python and Data Visualization.pdf" class="certificate-btn">View Certificate</a>
+              <a href="/assets/pdfs/Shivam Gupta - Google - Python and Data Visualization.pdf"
+                class="certificate-btn" target="_blank">View Certificate</a>
             </div>
           </div>
 
@@ -1168,7 +944,8 @@
               <span class="certificate-category">Microsoft Learn Student Ambassador</span>
               <time class="certificate-date">2022</time>
               <h3 class="certificate-title">Bootcamp - Python and Data Visualization</h3>
-              <a href="/assets/pdfs/Shivam Gupta - Microsoft - Python and Data Visualization.pdf" class="certificate-btn">View Certificate</a>
+              <a href="/assets/pdfs/Shivam Gupta - Microsoft - Python and Data Visualization.pdf"
+                class="certificate-btn" target="_blank">View Certificate</a>
             </div>
           </div>
 
@@ -1181,7 +958,7 @@
               <span class="certificate-category">Devtown</span>
               <time class="certificate-date">September, 2022</time>
               <h3 class="certificate-title">Bootcamp - C++ Data Structures and Algorithms</h3>
-              <a href="/assets/pdfs/Shivam Gupta - Devtown - C++ DSA.pdf" class="certificate-btn">View Certificate</a>
+              <a href="/assets/pdfs/Shivam Gupta - Devtown - C++ DSA.pdf" class="certificate-btn" target="_blank">View Certificate</a>
             </div>
           </div>
 
@@ -1211,7 +988,7 @@
           <ul class="blog-posts-list">
 
             <li class="blog-post-item">
-              <a href="https://modern-android-java.blogspot.com/2024/12/mastering-android-development-with-java.html">
+              <a href="https://modern-android-java.blogspot.com/2024/12/mastering-android-development-with-java.html" target="_blank">
 
                 <figure class="blog-banner-box">
                   <img src="./assets/images/blog1.jpg" alt="android development" loading="lazy">
@@ -1262,7 +1039,7 @@
         <section class="mapbox" data-mapbox>
           <figure>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3548.814062736419!2d75.95272657530494!3d27.193580176480857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396d09d29fda6413%3A0xeff4b5cb1ce3e35a!2sNIMS%20University!5e0!3m2!1sen!2sin!4v1740767617446!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28005.348535982463!2d77.0440413795437!3d28.669640941213913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d0438728d3fc9%3A0x64e1eebb4ec4e142!2sNangloi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1753292249500!5m2!1sen!2sin"
               width="400" height="300" loading="lazy"></iframe>
           </figure>
         </section>
@@ -1305,6 +1082,41 @@
     </div>
 
   </main>
+
+  <!-- Floating Resume Button -->
+  <button class="floating-resume-btn" onclick="toggleResumeModal()">
+    <ion-icon name="document-text-outline"></ion-icon>
+    Resume/CV
+  </button>
+  
+  <!-- Resume Modal -->
+  <div class="resume-modal" id="resumeModal">
+    <div class="resume-modal-content">
+      <span class="close-modal" onclick="toggleResumeModal()">&times;</span>
+      <h2>My Resume/CV</h2>
+      <!-- Empty iframe; we will set the src dynamically -->
+      <iframe id="resumeIframe" frameborder="0"></iframe>
+    </div>
+  </div>
+
+
+  <!-- Floating Hire Me Button -->
+  <button class="hire-me-btn" id="hireMeBtn" title="Hire Me">
+    <ion-icon name="briefcase-outline"></ion-icon>
+    <span>Hire Me</span>
+  </button>
+
+  <!-- Hire Me Popup Modal -->
+  <div class="hire-me-modal" id="hireMeModal">
+    <div class="hire-me-modal-content">
+      <span class="close-modal" id="closeHireMe">&times;</span>
+      <h2>Let's Work Together</h2>
+      <p>Email: <a href="mailto:shivamguptaji24@gmail.com">shivamguptaji24@gmail.com</a></p>
+      <p>Phone: <a href="tel:+919045525399">+91 90455 25399</a></p>
+      <p>Feel free to reach out for any project inquiries or collaborations!</p>
+    </div>
+  </div>
+
 
 
 
