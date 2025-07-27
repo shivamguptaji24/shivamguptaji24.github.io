@@ -119,30 +119,33 @@ for (let i = 0; i < navigationLinks.length; i++) {
 // -------------------------------
 // ✅ Success Modal (After Form Submission)
 // -------------------------------
-const successModal = document.createElement("div");
-successModal.innerHTML = `
-  <div id="successModal" class="modal" style="...">
-    <span class="close-btn" style="...">&times;</span>
-    <ion-icon name="checkmark-circle" style="..."></ion-icon>
-    <p>Your message is sent successfully !!</p>
-  </div>
-`;
-document.body.appendChild(successModal);
+// ✅ Contact Form Submission Handler
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("contactForm");
+  const modal = document.getElementById("successModal");
+  const closeBtn = modal.querySelector(".close-btn");
 
-// Show modal and submit after delay
-form.addEventListener("submit", function (event) {
-  event.preventDefault();
-  document.getElementById("successModal").style.display = "block";
-  setTimeout(function () {
-    document.getElementById("successModal").style.display = "none";
-    form.submit();
-  }, 3000);
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    if (!form.checkValidity()) {
+      form.reportValidity(); // Show default browser validation
+      return;
+    }
+
+    modal.classList.add("show");
+
+    setTimeout(() => {
+      modal.classList.remove("show");
+      form.reset();
+    }, 3000);
+  });
+
+  closeBtn.addEventListener("click", () => {
+    modal.classList.remove("show");
+  });
 });
 
-// Manual modal close
-document.querySelector(".close-btn").addEventListener("click", function () {
-  document.getElementById("successModal").style.display = "none";
-});
 
 // -------------------------------
 // 🎯 Skills Filter (Interactive Buttons for Skill Category)
